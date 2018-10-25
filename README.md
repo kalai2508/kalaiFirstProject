@@ -1,2 +1,0 @@
-# kalaiFirstProject
-trial project
