@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webApiHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>f6352c34-a50c-4af1-8fcc-9b08d64245b9</versionUuid>
+    <webApi a:uuid="c27f66fc-3472-4cbd-8fb5-033cf300bedd" name="Temp_callRecord">
+        <a:description>to get bra list</a:description>
+        <a:expression>with(
+  /*
+  * Run the "queryrecord()" function on "cons!TEMP_BRA_REC" to retrieve data for the
+  * first 50 records and store this data in a local variable named "local!records".
+  */
+  local!records: queryrecord(
+    #"_a-0000e170-634f-8000-9ba2-011c48011c48_1869076",
+    #"SYSTEM_SYSRULES_query"(
+       filter: #"SYSTEM_SYSRULES_queryFilter"(
+        field: "RecordId",
+        operator: "=",
+        value: tointeger(http!request.queryParameters.recordId)
+      ),
+      pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
+        startIndex: 1,
+        batchSize: -1
+      )
+    )
+  ).data,
+
+  /*
+  * Construct an HTTP response that contains the information that we just stored
+  * in "local!records".
+  */
+  #"SYSTEM_SYSRULES_httpResponse_v1"(
+    /*
+    * Set an HTTP header that tells the client that the body of the response
+    * will be JSON-encoded.
+    */
+    headers: {
+      #"SYSTEM_SYSRULES_httpHeader"(name: "Content-Type", value: "application/json")
+    },
+    /*
+    * JSON-encode the value of "local!records" and place it in the response body.
+    */
+    body: #"SYSTEM_SYSRULES_toJson_v1"(value: local!records)
+  )
+)</a:expression>
+        <a:urlAlias>braCustList</a:urlAlias>
+        <a:httpMethod>GET</a:httpMethod>
+        <a:system>false</a:system>
+    </webApi>
+    <roleMap/>
+    <typedValue>
+        <type>
+            <name>WebApiRequest?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:path/>
+                <a:body/>
+            </el>
+        </value>
+    </typedValue>
+    <history>
+        <historyInfo versionUuid="f6352c34-a50c-4af1-8fcc-9b08d64245b9"/>
+    </history>
+</webApiHaul>

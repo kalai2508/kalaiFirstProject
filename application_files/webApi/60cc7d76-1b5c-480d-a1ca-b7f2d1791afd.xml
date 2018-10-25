@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webApiHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>f0f135ec-66d1-4e05-b2a5-09c4c12bf5d8</versionUuid>
+    <webApi a:uuid="60cc7d76-1b5c-480d-a1ca-b7f2d1791afd" name="Hello world">
+        <a:description></a:description>
+        <a:expression></a:expression>
+        <a:urlAlias>helloWorld</a:urlAlias>
+        <a:httpMethod>POST</a:httpMethod>
+        <a:system>false</a:system>
+    </webApi>
+    <roleMap/>
+    <typedValue>
+        <type>
+            <name>WebApiRequest?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:path/>
+                <a:headers>
+                    <a:name>Content-Type</a:name>
+                    <a:value>application/json</a:value>
+                </a:headers>
+                <a:body>{}</a:body>
+            </el>
+        </value>
+    </typedValue>
+    <history>
+        <historyInfo versionUuid="f0f135ec-66d1-4e05-b2a5-09c4c12bf5d8"/>
+    </history>
+</webApiHaul>
