@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:com:tcs:types:SampleNameAddress"
+  xmlns:tns="urn:com:tcs:types:SampleNameAddress" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="SAMPLE_NAME_ADDRESS">
+    <xsd:annotation>
+      <xsd:appinfo source="appian.jpa">
+				@Table(name="SAMPLE_NAME_ADDRESS")
+			</xsd:appinfo>
+      <xsd:appinfo source="http://www.appian.com/ae/types/2009">
+        <ns2:Metadata xmlns:ns2="http://www.appian.com/ae/types/2009">
+          <ns2:versionUuid>0000e18e-92c9-8000-f92f-7f0000014e7a</ns2:versionUuid>
+          <ns2:history>
+            <ns2:historyInfo versionUuid="0000e18e-92c9-8000-f92f-7f0000014e7a"/>
+          </ns2:history>
+        </ns2:Metadata>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ID" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Id @Column(name="ID")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FIRST_NAME" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="FIRST_NAME", length=50)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MIDDLE_NAME" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="MIDDLE_NAME")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LAST_NAME" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="LAST_NAME", length=50)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ADDRESS" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="ADDRESS", length=60)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MAIL" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="MAIL",length=50)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PHONE" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="PHONE",length=50)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DOB" nillable="true" type="xsd:date">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="DOB")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
